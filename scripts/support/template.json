@@ -1,5 +1,5 @@
 {
-  "template": "es-archiver-*",
+  "template": "msb-es-archiver-*",
   "settings": {
     "index.mapping.ignore_malformed": true
   },
