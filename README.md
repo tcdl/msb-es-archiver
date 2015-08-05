@@ -1,2 +1,2 @@
 # msb-es-archiver
-Archives all messages to Elastic Search
+Listens to all channels and archives messages to Elasticsearch.

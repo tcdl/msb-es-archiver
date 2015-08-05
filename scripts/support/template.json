@@ -1,0 +1,83 @@
+{
+  "template": "es-archiver-*",
+  "settings": {
+    "index.mapping.ignore_malformed": true
+  },
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "ack": {
+          "properties": {
+            "responderId": {
+              "type": "string"
+            },
+            "responsesRemaining": {
+              "type": "long"
+            },
+            "timeoutMs": {
+              "type": "long"
+            }
+          }
+        },
+        "correlationId": {
+          "type": "string"
+        },
+        "meta": {
+          "properties": {
+            "createdAt": {
+              "type": "date",
+              "format": "dateOptionalTime"
+            },
+            "durationMs": {
+              "type": "long"
+            },
+            "serviceDetails": {
+              "properties": {
+                "hostname": {
+                  "type": "string"
+                },
+                "instanceId": {
+                  "type": "string"
+                },
+                "ip": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "pid": {
+                  "type": "long"
+                },
+                "version": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "payload": {
+          "properties": {
+            "query": {
+              "type" : "object",
+              "index": "no"
+            },
+            "body": {
+              "type" : "object",
+              "index": "no"
+            },
+            "statusCode": {
+              "type": "long"
+            }
+          }
+        },
+        "topics": {
+          "properties": {
+            "to": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
