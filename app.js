@@ -12,6 +12,8 @@ var client = new elasticsearch.Client({
 });
 
 logger.on('message', function(message) {
+  if (message.topics.response) logger.ensureConsumerForTopic(message.topics.response);
+
   var timestamp = message.meta.createdAt = new Date(message.meta.createdAt);
   var monthStr = ('0' + (timestamp.getUTCMonth() + 1)).substr(-2);
   var dateStr = ('0' + timestamp.getUTCDate()).substr(-2);
